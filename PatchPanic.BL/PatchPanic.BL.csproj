@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PatchPanic.DAL\PatchPanic.DAL.csproj" />
+    <ProjectReference Include="..\PatchPanic.IBL\PatchPanic.IBL.csproj" />
+  </ItemGroup>
+
+</Project>
