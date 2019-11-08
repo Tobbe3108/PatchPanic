@@ -16,7 +16,7 @@ namespace PatchPanic.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["DevOpsCon"].ConnectionString);
+            //optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["AzureDB"].ConnectionString);
             optionsBuilder.UseSqlServer("Server = tcp:tobbeware.database.windows.net,1433; Initial Catalog = TobbeWare; Persist Security Info = False; User ID = Tobbe; Password = 79IufLyBiMsn28; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;");
         }
     }
