@@ -12,7 +12,13 @@ namespace PatchPanic.DAL
 
         public SpikeContext(DbContextOptions<SpikeContext> options) : base(options) { }
 
-        public DbSet<SpikeModel> SpikeModels { get; set; }
+        public DbSet<CategoriesModel> CategoriesModels { get; set; }
+        public DbSet<CategoryFieldsModel> CategoryFieldsModels { get; set; }
+        public DbSet<EntitiesModel> EntitiesModels { get; set; }
+        public DbSet<EntityDependenciesModel> EntityDependenciesModels { get; set; }
+        public DbSet<EntityEntriesModel> EntityEntriesModels { get; set; }
+        public DbSet<TasksModel> TasksModels { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
