@@ -13,6 +13,12 @@ using Microsoft.EntityFrameworkCore;
 using PatchPanic.MVC.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Autofac.Extensions.DependencyInjection;
+using Autofac.Core;
+using Autofac.Builder;
+using Autofac.Features;
+using Autofac.Util;
+using Autofac;
 
 namespace PatchPanic.MVC
 {
@@ -26,7 +32,7 @@ namespace PatchPanic.MVC
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -43,6 +49,11 @@ namespace PatchPanic.MVC
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            ContainerBuilder builder = new ContainerBuilder();
+            builder.Populate(services);
+
+            return new AutofacServiceProvider(builder.Build());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
