@@ -12,12 +12,12 @@ namespace PatchPanic.DAL
 
         public PatchPanicContext(DbContextOptions<PatchPanicContext> options) : base(options) { }
 
-        public DbSet<CategoriesModel> CategoriesModels { get; set; }
-        public DbSet<CategoryFieldsModel> CategoryFieldsModels { get; set; }
-        public DbSet<EntitiesModel> EntitiesModels { get; set; }
-        public DbSet<EntityDependenciesModel> EntityDependenciesModels { get; set; }
-        public DbSet<EntityEntriesModel> EntityEntriesModels { get; set; }
-        public DbSet<TasksModel> TasksModels { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<CategoryField> CategoryFields { get; set; }
+        public DbSet<Entity> Entities { get; set; }
+        public DbSet<EntityDependency> EntityDependencies { get; set; }
+        public DbSet<EntityEntry> EntityEntries { get; set; }
+        public DbSet<Task> Tasks { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

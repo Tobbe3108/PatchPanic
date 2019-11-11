@@ -6,8 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PatchPanic.DAL
 {
-    [Table("Entities")]
-    class EntitiesModel
+    class Entity
     {
         [Key]
         public Guid Id { get; set; }

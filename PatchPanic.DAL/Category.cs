@@ -6,19 +6,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PatchPanic.DAL
 {
-    [Table("EntityDependencies")]
-    class EntityDependenciesModel
+    class Category
     {
         [Key]
         public Guid Id { get; set; }
 
         [Required]
-        [Column("EntityId")]
-        public Guid EntityId { get; set; }
-
-        [Required]
-        [Column("ParentId")]
-        public Guid ParentId { get; set; }
+        public string Name { get; set; }
 
         [Timestamp]
         public byte[] RowVersion { get; set; }

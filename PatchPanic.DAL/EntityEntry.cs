@@ -6,21 +6,21 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PatchPanic.DAL
 {
-    [Table("CategoryFields")]
-    class CategoryFieldsModel
+    class EntityEntry
     {
         [Key]
         public Guid Id { get; set; }
 
         [Required]
-        [Column("CategoryId")]
-        public Guid CategoryId { get; set; }
-        
-        [Required]
-        public string Name { get; set; }
+        [Column("EntityId")]
+        public Guid EntityId { get; set; }
 
         [Required]
-        public string TypeOf { get; set; }
+        [Column("CategoryFieldId")]
+        public Guid CategoryFieldId { get; set; }
+
+        [Required]
+        public string Value { get; set; }
 
         [Timestamp]
         public byte[] RowVersion { get; set; }
