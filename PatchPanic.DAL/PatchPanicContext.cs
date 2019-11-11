@@ -6,11 +6,11 @@ using System.Configuration;
 
 namespace PatchPanic.DAL
 {
-    class SpikeContext : DbContext
+    class PatchPanicContext : DbContext
     {
-        public SpikeContext() : base() { }
+        public PatchPanicContext() : base() { }
 
-        public SpikeContext(DbContextOptions<SpikeContext> options) : base(options) { }
+        public PatchPanicContext(DbContextOptions<PatchPanicContext> options) : base(options) { }
 
         public DbSet<CategoriesModel> CategoriesModels { get; set; }
         public DbSet<CategoryFieldsModel> CategoryFieldsModels { get; set; }
@@ -22,8 +22,7 @@ namespace PatchPanic.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["AzureDB"].ConnectionString);
-            optionsBuilder.UseSqlServer("Server = tcp:tobbeware.database.windows.net,1433; Initial Catalog = TobbeWare; Persist Security Info = False; User ID = Tobbe; Password = 79IufLyBiMsn28; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;");
+            optionsBuilder.UseSqlServer(Settings.Default.AzureDB);
         }
     }
 }

@@ -10,7 +10,6 @@ namespace PatchPanic.DAL
     class CategoryFieldsModel
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
         [Required]
