@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using PatchPanic.IBL;
 
 namespace PatchPanic.DAL
 {
-    class Entity
+    class Entity : IEntity
     {
         [Key]
         public Guid Id { get; set; }
