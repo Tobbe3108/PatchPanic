@@ -16,6 +16,7 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\PatchPanic.BL\PatchPanic.BL.csproj" />
     <ProjectReference Include="..\PatchPanic.IBL\PatchPanic.IBL.csproj" />
   </ItemGroup>
 
